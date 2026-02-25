@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head> <!--LINHA 2 E 3 DEFINEM O INICIO E CABEÇALHO DA PÁGINA RESPECTIVAMENTE-->
+    <meta charset="UTF-8"> <!--ESSE COMANDO PERMITE CARECTERES COM ACENTO-->
+    <title>VIA CEP</title>
+    <style> /*ONDE AS ALTERAÇÕES VISUAIS SÃO REALIZADAS*/
+        body { font-family:Verdana, Geneva, Tahoma, sans-serif; text-align: center; margin: top 40px; 
+        background-color: rgb(249, 0, 0) ;}
+        /* CAIXA DE TEXTO BORDAS E MARGENS*/    
+        input {padding: 5px; margin: 5px; border-radius: 10px; border: none; background-color: darkgray;}
+        
+        button {padding: 8px 15px; background-color: rgb(77, 77, 77); border-radius: 10px; border: none}
+        /* BOTÃO E MARGENS*/
+        #textoResultado {margin-top: 15px; font-size: 18px;}
+        /*CAIXA DE TEXTO id=textoResultado MARGEM SUPERIOR E FONTE*/
+    </style>
+         
+</head> <!-- COMANDOS SEGUIDOS SEGUIDOS DE "/" SIGNIFICAM FIM DE UMA AÇÃO OU PARTE DO SITE-->
+
+<body>
+    <h2>CONSULTA DE CEP</h2>
+
+    <div> <!--COUNTEINER-->
+        <input id="campoCEP" placeholder="insira CEP"> <!--CAIXA PARA TEXTO (para usuário digitar)-->
+    </div>
+
+    <button onclick="consultarCEP()">Consultar</button> <!--BOTÃO COM TÍTULO-->
+    <div id="textoResultado"></div>
+
+    <script>
+        const FIREBASE_URL = "https://climatempo-gio-default-rtdb.asia-southeast1.firebasedatabase.app/TDS2/lucasR.json";
+
+        function salvarDados(cep) {
+            fetch(FIREBASE_URL, {
+                method: "PUT",
+                headers: {"Contente-Type": "application/json"},
+                body: JSON.stringify({ cep: cep })
+            });
+        }
+
+        function carregarDados() {
+            fetch(FIREBASE_URL)
+            .then(r => r.json())
+            .then(dados => {
+                if(dados && dados.cep) { 
+                    document.getElementById("campoCEP").value = dados.cep;
+                    consultarCEP(dados.cep);
+                }
+            });
+        }
+        function obterEndereco(cep) {
+            cep = cep.replace(/\D/g, "");
+            if(cep.length !== 8) {
+                document.getElementById("textoResultado").innerText =
+                    "Digite um CEP válido com 8 números.";
+                return;
+            }
+
+            fetch("https://viacep.com.br/ws/" + cep + "/json/")
+            .then (r=> r.json())
+            .then(dados => {
+                if(dados.erro) {
+                    document.getElementById("textoResultado").innerText =
+                        "CEP não encontrado."
+                    return;
+                }
+
+                document.getElementById("textoResultado").innerText =
+                        "CEP: " + dados.cep + "\n" +
+                        "Logradouro: " + dados.logradouro + "\n" +
+                        "Bairro: " + dados.bairro + "\n" +
+                        "Cidade: " + dados.localidade + "\n" +
+                        "Estado: " + dados.uf;
+
+            })
+            .catch(() => {
+                document.getElementById("textoResultado").innerText =
+                    "Erro ao consultar o CEP"
+                })
+        }
+
+        function consultarCEP() {
+            const cep = document.getElementById("campoCEP").value;
+            obterEndereco(cep);
+            salvarDados(cep);
+        }
+
+        carregarDados();
+    </script>
+
+</body>
+</html> <!-- FIM DO CORPO DA PÁGINA E DA PÁGINA RESPECTIVAMENTE NA LINHA 21 E 22-->
