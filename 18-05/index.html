@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Site irado 2</title>
+
+    <style>
+
+        #Corpo{
+            font: Arial, sans-serif;
+            background-color: burlywood;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbctG40OQNA4TCJJpYGraxvSin6hvdgF1oOA&s");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        header {
+            color: rgb(241, 249, 3);
+            text-align: center;
+        }
+
+        main {
+            padding-bottom: 75px;
+            text-align: center;
+            font-size: 21px;
+            color: rgb(229, 255, 0);
+        }
+
+        button{
+            color: white;
+            background-color: blue;
+            text-decoration-color: crimson;
+            border-radius: 15px;
+            cursor: pointer;    
+        }
+
+        button:hover{
+            background-color: rgb(6, 6, 161);
+        }
+
+        #textoInformativo{
+            font: Arial;
+            font-size: small;
+            box-shadow: inset;
+            color: white;
+            text-align: center;
+            width: 300px;
+            padding: 15px;
+            margin: 20px auto;
+            border-radius: 15px;
+            background-color: rgb(0, 0, 0);
+        }
+
+    </style>
+</head>
+<div id="Corpo">
+<body>
+    <header>
+        <h1>Bem vindo ao Não-é-um-golpe.com</h1>
+    </header>
+    <main>
+        <p>Este é um exemplo de site que não aplica golpes.</p>
+
+        <div id="textoInformativo">
+            <p>Diariamente milhares de pessoas caem em golpes na internet,</p>
+            <p>por isto sempre atente-se a links maliciosos ou pessoas se passando por empresas ou parentes.</p>
+        </div>
+            <button onclick="mostrarImagem()">
+                Clique aqui para não cair num golpe
+                <img id="minhaImagem" src="https://thumbs.dreamstime.com/b/ladr%C3%A3o-que-leva-um-grande-saco-do-dinheiro-28845660.jpg" alt="Imagem escondida" style="display: none;" width="300">
+                <p id="meuTexto" style="display: none;"></p>
+            </button>
+    </main>
+        <script>
+            function mostrarImagem(){
+                // imagem
+                var imagem = document.getElementById("minhaImagem");
+                imagem.src = "https://thumbs.dreamstime.com/b/ladr%C3%A3o-que-leva-um-grande-saco-do-dinheiro-28845660.jpg"; // Altere para o seu caminho
+                imagem.style.display = "block"; // Torna a imagem visível
+
+                //texto
+                var texto = document.getElementById("meuTexto");
+                texto.innerHTML = "Tá vendo como é fácil cair num golpe! Nem tudo é o que diz ser!";
+                texto.style.display = "block";
+            }
+        </script>
+    </div>
+</div>
+</body>
+</html>
