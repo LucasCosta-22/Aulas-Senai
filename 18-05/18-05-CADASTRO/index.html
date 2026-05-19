@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>Cadastro Irado 2</title>
+</head>
+
+<style>
+    body{
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        background-color: rgb(242, 242, 242);
+        margin: 0;
+        height: 100vh;
+    }
+
+    h2{
+        font: Arial: sans-serif;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .container{
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        width: 320px;
+    }
+
+    label{
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    input, select{
+        width: 100%;
+    }
+
+    button{
+        border: 5px;
+        cursor: pointer;
+        background-color: blue;
+        color: white;
+        margin: 0;
+        margin-top: 25px;
+    }
+
+    button:hover{
+        background-color: rgb(0, 0, 209);
+    }
+</style>
+<body>
+    <div class="container">
+        <h2>Cadastro de Aluno</h2>
+            <form>
+                <label for="nome">Nome</label>
+                <input type="nome" name="nome" required>
+
+                <label for="idade">Idade</label>
+                <input type="number" id="idade" name="idade" min="1" required>
+
+                <label for="sexo">Sexo</label>
+                <select id="sexo" name="sexo" required>
+                <option value="">Selecione</option>
+                <option value="feminino">Feminino</option>
+                <option value="masculino">Masculino</option>
+                <option value="outro">Outro</option>
+                </select>
+
+                <label for="turma">Turma</label>
+                <input type="text" id="Turma" name="turma" required>
+
+                <button type="submit">Cadastrar</button>
+            </form>
+    </div>
+
+</body>
+</html>
