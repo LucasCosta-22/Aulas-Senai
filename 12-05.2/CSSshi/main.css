@@ -1,0 +1,96 @@
+:root{
+    --primary-color: #1e293b;
+    --secundary-color: #334155;
+    --accent-color: #38bdf8;
+    --text-main: #1e293b;
+    --text-muted: #475569;
+    --car-bg: rgba(255,255,0.92); 
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}    
+
+body{
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background-image: 
+        linear-gradient(rgba(0,0,0,0.7),
+        rgba(0,0,0,0.7)),
+        url(https://hips.hearstapps.com/mtg-prod/68c1dafda2176a00020d2597/gazoo-4age-01.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;  
+    display: flex;
+    flex-direction: column;
+    }
+
+header{
+    color: white;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5;
+    text-shadow: 2px 2px 4px rgbd(0,0,0,0.6);
+    padding: 2px;
+    text-align: center;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+main{
+    width: 100%;
+    min-height: 700px;
+    max-width: 1200px;
+    margin: 40px auto;
+    display: flex;
+    gap: 24px;
+    flex: 1;
+    justify-content: space-between;
+}
+
+aside{
+    width: 360px;
+    color: yellow;
+    background-color: rgba(63, 60, 60, 0.9);
+    border-radius: 15px;
+   
+    text-align: center;
+}
+
+section{
+    width: 55%;
+    border-radius: 15px;
+    background-color: rgba(63, 60, 60, 0.9);
+    margin-left: 8px;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+
+    
+    text-align: center;
+}
+
+footer{
+    background: white;
+    color: rgb(216, 216, 216);
+    padding: 25px;
+    margin-top: auto;
+    width: 100%;
+    height: 30px;
+
+    text-align: center;
+}
