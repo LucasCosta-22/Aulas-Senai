@@ -1,0 +1,56 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to button, #f2f2f2, #d9d9d9);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+header{
+    background-color: rgb(229, 198, 58);
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0,0,2,2);
+    box-sizing: border-box;
+}
+
+h1{
+    margin: 0;
+    color: black;
+}
+
+.lampada-container{
+    margin-top: 40px;
+}
+
+.lampada-container img{
+    width: 400px;
+    height: 300px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: 0.2s ease;
+}
+
+.lampada-container img:hover{
+    background-color: rgb(238, 238, 238);
+    border: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover{
+    background-color: rgb(234, 234, 70);
+    border-radius: 8px;
+    transform: scale(1.05);
+}
