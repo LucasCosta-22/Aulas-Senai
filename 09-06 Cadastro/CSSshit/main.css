@@ -1,0 +1,97 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#boxLogin{
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 20px;
+    width: 500px;
+}
+
+input, button{
+    width: 90%;
+    padding: 10px;
+    margin: 5px 0;
+}
+
+button{
+    cursor: pointer;
+    background-color: darkgray;
+    color: azure;
+    margin-top: 10px;
+}
+
+table{
+    background: white;
+    color: black;
+    margin-top: 10px;
+}
+
+.caixaAvisoEstoque{
+    background-color: rgb(23, 22, 22);
+    padding: 30px;
+    border-radius: 10px;
+    
+    width: 400px;
+    max-width: 90%;
+    
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    text-align: center;
+}
+
+.principalPag{
+    background-color: white;
+    color: black;
+    width: 700px;
+    max-width: 90%;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+    text-align: center;
+}
+
+.principalPag h1{
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.principalPag p{
+    margin-bottom: 30px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.botoes button{
+    width: 180px;
+    height: 60px;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: #6c757d;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.botoes button:hover{
+    background-color: #555;
+}
