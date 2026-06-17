@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Suporte & Relatórios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="container">
+        <h1>Sistema de Reporte</h1>
+
+        <div id="loginBox" style="display: block;">
+            <h2>Login</h2>
+            <input id="usuario" placeholder="Usuário">
+            <input id="senha" type="password" placeholder="Senha">
+            <button onclick="login()">Entrar</button>
+            <p id="mensagem"></p> 
+        </div>  
+
+        <div id="painel" style="display: none;">
+            <div class="card">
+                <h2>Novo Chamado</h2>
+                <input id="nome" placeholder="Solicitante">
+                <input id="setor" placeholder="Setor">
+                <select id="prioridade">
+                    <option>Baixa</option>
+                    <option>Média</option>
+                    <option>Alta</option>
+                    <option>Crítica</option>
+                </select>
+
+                <textarea id="descricao" placeholder="Descrição"></textarea>
+                <button onclick="salvar()">Salvar Chamado</button>
+            </div>
+
+            <div class="card">
+                <h2>Relatórios</h2>
+                <p id="total"></p>
+                <p id="abertos"></p>
+            </div>
+
+            <div class="card">
+                <h2>Chamados</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th> 
+                            <th>Nome</th> 
+                            <th>Prioridade</th>
+                            <th>Status</th>
+                            <th>Ação</th>
+                        </tr> 
+                    </thead>
+                    <tbody id="tabelaChamados"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
